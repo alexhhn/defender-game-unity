@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public Animator animator;
-
     public GameObject projecttilePrefab;
 
 
@@ -19,12 +18,12 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("init");
         animator = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         // transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * movementSpeed);
@@ -33,8 +32,7 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
 
-        // if (horizontalInput < 0)
-        // {
+
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
         if (movement != Vector3.zero)
@@ -44,11 +42,9 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
 
-        // transform.Rotate(0.0f, -90.0f, 0.0f);
-        // }
-        // else if (horizontalInput > 0)
-        // {
-        //     transform.Rotate(0.0f, 90.0f, 0.0f);
-        // }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z), projecttilePrefab.transform.rotation);
+        }
     }
 }
