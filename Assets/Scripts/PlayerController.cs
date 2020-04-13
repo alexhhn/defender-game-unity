@@ -35,10 +35,17 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
+        Debug.Log("movement" + movement);
         if (movement != Vector3.zero)
         {
+            animator.SetBool("isRunning", true);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
         }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
 
         transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
 
