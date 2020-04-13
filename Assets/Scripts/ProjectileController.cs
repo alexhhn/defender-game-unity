@@ -6,8 +6,10 @@ public class ProjectileController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 10.0f;
+    private GameManager gameManager;
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         var rot = transform.rotation;
         rot.x = 0;
     }
@@ -20,6 +22,8 @@ public class ProjectileController : MonoBehaviour
             Debug.Log("projectile hits");
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            // Debug.Log(gameManager);
+            gameManager.UpdateScore(1);
 
         }
 

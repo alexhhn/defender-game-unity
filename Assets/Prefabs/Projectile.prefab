@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  gameManager: {fileID: 0}
 --- !u!65 &7415273526625610993
 BoxCollider:
   m_ObjectHideFlags: 0

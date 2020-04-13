@@ -4756,6 +4756,7 @@ GameObject:
   - component: {fileID: 143035401524251102}
   - component: {fileID: 195307950320347918}
   - component: {fileID: 114605333407239336}
+  - component: {fileID: 1213877754374173177}
   m_Layer: 0
   m_Name: man-casual
   m_TagString: Untagged
@@ -4908,6 +4909,19 @@ MonoBehaviour:
   movementEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1213877754374173177
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408502420502358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.928469, z: 1}
+  m_Center: {x: 0, y: 1.0037957, z: 0}
 --- !u!1 &1410832605728358
 GameObject:
   m_ObjectHideFlags: 0
