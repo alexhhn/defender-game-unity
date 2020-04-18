@@ -1009,6 +1009,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   girlsPrefabs:
   - {fileID: 5497376240533716224, guid: 89b79953f0cad40c6bee8885b2136267, type: 3}
+  - {fileID: 5826735141722637163, guid: 16d827bf3cee84ae693631fdb3eefe49, type: 3}
+  - {fileID: 3149401661623635486, guid: 9501242fa6f1d47fc89e979a35b1db81, type: 3}
+  - {fileID: 916630537462713988, guid: ef67f20d092254c1cb698859d7b2e93e, type: 3}
+  - {fileID: 9000660965624317301, guid: ed8766c36b5444fdfbc5cd40187546b7, type: 3}
 --- !u!4 &1157282916
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,6 +1693,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ef50c88a6e0914e8c93a3d4f03afebdd, type: 2}
+      objectReference: {fileID: 9100000, guid: 683fc05b746434284bb1e1de830e1151, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ad2992f257b4ee38543b4ff1dbbcd5, type: 3}
