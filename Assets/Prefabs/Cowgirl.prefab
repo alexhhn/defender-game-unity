@@ -7816,6 +7816,7 @@ GameObject:
   - component: {fileID: 5497924561123647747}
   - component: {fileID: 5497924561123647744}
   - component: {fileID: 362222610}
+  - component: {fileID: 8227204749453132929}
   m_Layer: 0
   m_Name: Cowgirl
   m_TagString: Enemy
@@ -8012,6 +8013,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8227204749453132929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5497376240533716224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3528f2785a76d4de7a691d8ac63c8928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5497412688222572502
 GameObject:
   m_ObjectHideFlags: 0
