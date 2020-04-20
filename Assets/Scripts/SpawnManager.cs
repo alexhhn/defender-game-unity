@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosZ = 33;
     private float startDelay = 1;
     private float spawnInterval = 1;
+    private int lastSpawnIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +29,15 @@ public class SpawnManager : MonoBehaviour
 
         // instantiate animal at random spawn location
         int girlsIndex = Random.Range(0, girlsPrefabs.Length);
+
+        // Decrease the chance of spawning enemy at the same position
+        if (girlsIndex == lastSpawnIndex)
+        {
+            girlsIndex = Random.Range(0, girlsPrefabs.Length);
+        }
+
         Instantiate(girlsPrefabs[girlsIndex], spawnPos, girlsPrefabs[girlsIndex].transform.rotation);
+        girlsIndex = lastSpawnIndex;
 
     }
 

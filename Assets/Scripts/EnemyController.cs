@@ -5,21 +5,25 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float movementSpeed = 10.0f;
-    public Animator animator;
+
+    public GameObject coronaAura;
+    public int hasCoronaChance = 25;
 
     // Start is called before the first frame update
     void Start()
     {
-        // anim.enabled = false;
-
         Debug.Log("start");
-        animator = GetComponent<Animator>();
+        float coronaRange = Random.Range(0, 100);
+        Debug.Log(coronaRange);
+        if (hasCoronaChance > coronaRange)
+        {
+            coronaAura.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // anim.Play("Run_InPlace");
 
         transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
     }
