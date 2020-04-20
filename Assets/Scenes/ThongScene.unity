@@ -432,7 +432,7 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 88f55ce20c8f54f74ab30b2122b2ecde, type: 3}
-    volume: 0.4
+    volume: 0.6
     pitch: 1
     source: {fileID: 0}
 --- !u!1 &705507993
@@ -925,6 +925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 866290608}
+  restartDelay: 1
 --- !u!4 &888672804
 Transform:
   m_ObjectHideFlags: 0
@@ -1743,38 +1744,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7983685396515970438, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
         type: 3}
-      propertyPath: xRange
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983685396515970438, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: zRangedown
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983685396515970438, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: zRangeup
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983685396515970438, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: xRangeright
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983685396515970438, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: xRangeleft
-      value: 23
-      objectReference: {fileID: 0}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 888672803}
     - target: {fileID: 7984528745924023251, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7984528745924023251, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7988089604382689661, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
         type: 3}
@@ -1831,15 +1807,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8041429333889586509, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8041429333889586509, guid: 48ad2992f257b4ee38543b4ff1dbbcd5,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 683fc05b746434284bb1e1de830e1151, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48ad2992f257b4ee38543b4ff1dbbcd5, type: 3}

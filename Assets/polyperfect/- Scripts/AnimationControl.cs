@@ -45,7 +45,6 @@ namespace PolyPerfect
 
             int clipIndex = Random.Range(0, numOfClips);
             string animationName = "Death";
-            Debug.Log(clipIndex);
 
             this.GetComponent<Animator>().SetInteger(animationName, clipIndex);
         }

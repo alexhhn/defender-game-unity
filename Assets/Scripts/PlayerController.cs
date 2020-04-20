@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
 
         if (animator.GetBool("isAttacking") == false)
         {
-            Debug.Log(animator.GetBool("isAttacking"));
             animator.SetBool("isRunning", false);
             transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotateSpeed);
@@ -76,6 +75,13 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z > zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
+        }
+    }
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.collider.tag == "Enemy")
+        {
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
