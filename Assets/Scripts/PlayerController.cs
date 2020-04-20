@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject projecttilePrefab;
 
-    public float xRangeleft = 18f;
-    public float xRangeright = 23.0f;
+    private float xRange = 24.0f;
     private float zRange = 32.0f;
 
     // Start is called before the first frame update
@@ -59,14 +58,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isAttacking", true);
         }
         // Player move in range
-        if (transform.position.x < -xRangeleft)
+        if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(-xRangeleft, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
 
         }
-        if (transform.position.x > xRangeright)
+        if (transform.position.x > xRange)
         {
-            transform.position = new Vector3(xRangeright, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
         if (transform.position.z < -zRange)

@@ -25,6 +25,7 @@ public class ProjectileController : MonoBehaviour
             // Debug.Log(gameManager);
             gameManager.UpdateScore(1);
 
+            FindObjectOfType<SoundManager>().Play("Throwing sound");
         }
 
     }
