@@ -13,7 +13,6 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         float coronaRange = Random.Range(0, 100);
-        Debug.Log(coronaRange);
         if (hasCoronaChance > coronaRange)
         {
             coronaAura.gameObject.SetActive(true);
