@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreText;
 
-    public float restartDelay = 0.1f;
+    // public float restartDelay = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("Game Over!");
-            Invoke("Restart", restartDelay);
+            Restart();
+            // Invoke("Restart", restartDelay);
         }
 
     }

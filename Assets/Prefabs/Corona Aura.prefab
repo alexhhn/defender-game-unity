@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2518549226581203040}
   - component: {fileID: 8200815529418482841}
   - component: {fileID: 1932639473475096370}
+  - component: {fileID: -7021371886697067302}
   m_Layer: 0
   m_Name: Corona Aura
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7634709996205035589}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 0.0034358979, y: 0.9438459, z: -0.00061950687}
-  m_LocalScale: {x: 2.149906, y: 2.149906, z: 2.149906}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,3 +94,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.49997783
   m_Center: {x: 0, y: 0.000000029802322, z: 0.00000011920929}
+--- !u!114 &-7021371886697067302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634709996205035589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d27dbaa32d04ad29d0065e1fcb4716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

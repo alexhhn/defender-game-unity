@@ -9758,7 +9758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 8
   coronaAura: {fileID: 314818590830776609}
-  hasCoronaChance: 50
+  hasCoronaChance: 10
 --- !u!114 &9213928960795615217
 MonoBehaviour:
   m_ObjectHideFlags: 0

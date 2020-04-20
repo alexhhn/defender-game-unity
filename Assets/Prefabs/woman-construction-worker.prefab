@@ -2236,7 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 8
   coronaAura: {fileID: 5209723405586701916}
-  hasCoronaChance: 50
+  hasCoronaChance: 10
 --- !u!114 &661392768926309436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,17 +11009,17 @@ PrefabInstance:
     - target: {fileID: 6892945675990475350, guid: 53eb2e025c8aa4baa8af7027a4e7c95a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.149906
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6892945675990475350, guid: 53eb2e025c8aa4baa8af7027a4e7c95a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.149906
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6892945675990475350, guid: 53eb2e025c8aa4baa8af7027a4e7c95a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.149906
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7634709996205035589, guid: 53eb2e025c8aa4baa8af7027a4e7c95a,
         type: 3}
