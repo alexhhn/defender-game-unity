@@ -12,7 +12,6 @@ public class EnemyController : MonoBehaviour
     {
         // anim.enabled = false;
 
-        Debug.Log("start");
         animator = GetComponent<Animator>();
     }
 

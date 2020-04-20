@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject projecttilePrefab;
 
-    public float xRangeleft = 18f;
-    public float xRangeright = 23.0f;
+    private float xRange = 24.0f;
     private float zRange = 32.0f;
 
     // Start is called before the first frame update
@@ -36,7 +35,6 @@ public class PlayerController : MonoBehaviour
 
         if (animator.GetBool("isAttacking") == false)
         {
-            Debug.Log(animator.GetBool("isAttacking"));
             animator.SetBool("isRunning", false);
             transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotateSpeed);
@@ -59,14 +57,14 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isAttacking", true);
         }
         // Player move in range
-        if (transform.position.x < -xRangeleft)
+        if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(-xRangeleft, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
 
         }
-        if (transform.position.x > xRangeright)
+        if (transform.position.x > xRange)
         {
-            transform.position = new Vector3(xRangeright, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
         if (transform.position.z < -zRange)
@@ -77,6 +75,13 @@ public class PlayerController : MonoBehaviour
         if (transform.position.z > zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
+        }
+    }
+    void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.collider.tag == "Enemy")
+        {
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
