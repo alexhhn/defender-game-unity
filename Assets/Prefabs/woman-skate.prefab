@@ -3330,9 +3330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7087ff154741f8a9a4778ec5a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 8
   coronaAura: {fileID: 4579467801264056568}
-  hasCoronaChance: 0.25
+  hasCoronaChance: 50
 --- !u!114 &982527453911201483
 MonoBehaviour:
   m_ObjectHideFlags: 0

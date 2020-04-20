@@ -19,12 +19,12 @@ public class ProjectileController : MonoBehaviour
 
         if (collision.GetComponent<Collider>().tag == "Enemy")
         {
-            Debug.Log("projectile hits");
             Destroy(collision.gameObject);
             Destroy(gameObject);
             // Debug.Log(gameManager);
             gameManager.UpdateScore(1);
 
+            FindObjectOfType<SoundManager>().Play("Throwing sound");
         }
 
     }
