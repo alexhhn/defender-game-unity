@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public Animator animator;
     public GameObject projecttilePrefab;
+    private float fireRate = 0.5f; // time the player has to wait to fire again
+    private float nextFire = 0; // time since start after which player can fire again
 
     private float xRange = 24.0f;
     private float zRange = 32.0f;
@@ -49,9 +51,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
         {
             Vector3 resetMovement = new Vector3(0f, 0f, 0f);
+            nextFire = Time.time + fireRate;
             Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 1), projecttilePrefab.transform.rotation);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(resetMovement), rotateSpeed);
             animator.SetBool("isAttacking", true);

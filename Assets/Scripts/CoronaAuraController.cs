@@ -15,13 +15,12 @@ public class CoronaAuraController : MonoBehaviour
     {
 
     }
+
     private void OnTriggerEnter(Collider collision)
     {
-
         if (collision.GetComponent<Collider>().tag == "Player")
         {
             FindObjectOfType<GameManager>().EndGame();
         }
-
     }
 }
