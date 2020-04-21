@@ -51,14 +51,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextFire)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 resetMovement = new Vector3(0f, 0f, 0f);
-            nextFire = Time.time + fireRate;
-            Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 1), projecttilePrefab.transform.rotation);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(resetMovement), rotateSpeed);
-            animator.SetBool("isAttacking", true);
+            ShootProjectile();
         }
+
+
         // Player move in range
         if (transform.position.x < -xRange)
         {
@@ -85,6 +83,19 @@ public class PlayerController : MonoBehaviour
         if (collisionInfo.collider.tag == "Enemy")
         {
             FindObjectOfType<GameManager>().EndGame();
+        }
+    }
+
+    // This function is also called on UI
+    public void ShootProjectile()
+    {
+        if (Time.time > nextFire)
+        {
+            Vector3 resetMovement = new Vector3(0f, 0f, 0f);
+            nextFire = Time.time + fireRate;
+            Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 1), projecttilePrefab.transform.rotation);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(resetMovement), rotateSpeed);
+            animator.SetBool("isAttacking", true);
         }
     }
 }
