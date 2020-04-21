@@ -7,7 +7,7 @@ public class GameOverMenu : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("ThongScene");
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void QuitGame()
