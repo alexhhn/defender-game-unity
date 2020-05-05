@@ -8,7 +8,11 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public int score;
+    public float enemySpeedIncreaseOvertime = 1f;
+
     public TextMeshProUGUI scoreText;
+    private float currentTime = 0; 
+    private float timeIncreaseRate = 5f;
 
     // public float restartDelay = 0.1f;
 
@@ -20,8 +24,13 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        if (Time.time > currentTime)
+        {
+            enemySpeedIncreaseOvertime += 0.1f;
+            currentTime = Time.time + timeIncreaseRate;
+        }
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -36,11 +45,6 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             Debug.Log("Game Over!");
             SceneManager.LoadScene("GameOver");
-
         }
-
     }
-
-
-
 }

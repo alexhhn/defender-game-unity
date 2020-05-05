@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 10.0f;
     public float rotateSpeed = 0.15f;
-
     public float horizontalInput;
     public float verticalInput;
     public Animator animator;
@@ -39,7 +38,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
             transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotateSpeed);
+
+            if (movement != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), rotateSpeed);
+            }
         }
 
         if (movement != Vector3.zero)
@@ -94,7 +97,7 @@ public class PlayerController : MonoBehaviour
             Vector3 resetMovement = new Vector3(0f, 0f, 0f);
             nextFire = Time.time + fireRate;
             Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 1), projecttilePrefab.transform.rotation);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(resetMovement), rotateSpeed);
+            transform.rotation = transform.rotation = Quaternion.identity;
             animator.SetBool("isAttacking", true);
         }
     }
