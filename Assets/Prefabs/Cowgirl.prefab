@@ -7996,7 +7996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7087ff154741f8a9a4778ec5a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 8
+  movementSpeed: 7
   coronaAura: {fileID: 6225404023876125627}
   hasCoronaChance: 10
 --- !u!54 &362222610
