@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private float xRange = 24.0f;
     private float zRange = 32.0f;
 
+    public Joystick joystick;
+    float moveHorizontal = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,19 +28,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
         // ? Temporarly commented out 
-        // float moveVertical = Input.GetAxisRaw("Vertical");
+        // Uncomment to activat joystick
+        if (joystick.Horizontal >= 0.2f)
+        {
+            moveHorizontal = movementSpeed;
+        }
+        else if (joystick.Horizontal <= -0.2f)
+        {
+            moveHorizontal = -movementSpeed;
+        }
+        else
+        {
+            moveHorizontal = 0f;
+        }
 
+        // Comment next line before deploy to mobile
+        // moveHorizontal = Input.GetAxisRaw("Horizontal") * movementSpeed;
         Vector3 movement = new Vector3(moveHorizontal, 0f, 0f);
 
         if (animator.GetBool("isAttacking") == false)
         {
             animator.SetBool("isRunning", false);
-            transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+            // transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+            transform.Translate(movement * Time.deltaTime, Space.World);
 
             if (movement != Vector3.zero)
             {
@@ -64,7 +78,6 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-
         }
         if (transform.position.x > xRange)
         {
