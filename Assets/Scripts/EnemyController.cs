@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed * gameManager.enemySpeedIncreaseOvertime);
-        Debug.Log(gameManager.enemySpeedIncreaseOvertime);
+        // Uncomment to log speed increasement
+        // Debug.Log(gameManager.enemySpeedIncreaseOvertime);
     }
 }
