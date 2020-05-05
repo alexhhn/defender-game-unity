@@ -9,9 +9,11 @@ public class EnemyController : MonoBehaviour
     public GameObject coronaAura;
     public int hasCoronaChance = 25;
 
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         float coronaRange = Random.Range(0, 100);
         if (hasCoronaChance > coronaRange)
         {
@@ -22,7 +24,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed * gameManager.enemySpeedIncreaseOvertime);
+        Debug.Log(gameManager.enemySpeedIncreaseOvertime);
     }
 }
