@@ -2085,7 +2085,7 @@ Transform:
   m_GameObject: {fileID: 916630537462713988}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -6.3741846, y: 0, z: 31.384024}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 915005267784924466}
   - {fileID: 913601956740373228}
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d7087ff154741f8a9a4778ec5a95d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 1
   coronaAura: {fileID: 5209723405586701916}
   hasCoronaChance: 10
 --- !u!114 &661392768926309436
