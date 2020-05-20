@@ -3,10 +3,10 @@
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] girlsPrefabs;
-    private float spawnRangeX = 25;
-    private float spawnPosZ = 33;
+    private float spawnRangeX = 4.5f;
+    private float spawnPosZ = 5.5f;
     private float startDelay = 1;
-    private float spawnInterval = 1;
+    private float spawnInterval = 5;
     private int lastSpawnIndex = 0;
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     {
 
     }
+
     // Spawn random mæber at random x position at end of play area
     void SpawnRandomGirls()
     {

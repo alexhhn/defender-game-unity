@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float enemySpeedIncreaseOvertime = 1f;
 
     public TextMeshProUGUI scoreText;
-    private float currentTime = 0; 
+    private float currentTime = 0;
     private float timeIncreaseRate = 5f;
 
     // public float restartDelay = 0.1f;
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("Game Over!");
-            SceneManager.LoadScene("GameOver");
+            // SceneManager.LoadScene("GameOver");
         }
     }
 }
