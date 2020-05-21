@@ -31,21 +31,21 @@ public class PlayerController : MonoBehaviour
     {
         // ? Temporarly commented out 
         // Uncomment to activat joystick
-        if (joystick.Horizontal >= 0.2f)
-        {
-            moveHorizontal = movementSpeed;
-        }
-        else if (joystick.Horizontal <= -0.2f)
-        {
-            moveHorizontal = -movementSpeed;
-        }
-        else
-        {
-            moveHorizontal = 0f;
-        }
+        // if (joystick.Horizontal >= 0.2f)
+        // {
+        //     moveHorizontal = movementSpeed;
+        // }
+        // else if (joystick.Horizontal <= -0.2f)
+        // {
+        //     moveHorizontal = -movementSpeed;
+        // }
+        // else
+        // {
+        //     moveHorizontal = 0f;
+        // }
 
         // Comment next line before deploy to mobile
-        // moveHorizontal = Input.GetAxisRaw("Horizontal") * movementSpeed;
+        moveHorizontal = Input.GetAxisRaw("Horizontal") * movementSpeed;
         Vector3 movement = new Vector3(moveHorizontal, 0f, 0f);
 
         if (animator.GetBool("isAttacking") == false)
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 resetMovement = new Vector3(0f, 0f, 0f);
             nextFire = Time.time + fireRate;
-            Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 1), projecttilePrefab.transform.rotation);
+            Instantiate(projecttilePrefab, new Vector3(transform.position.x, projecttilePrefab.transform.position.y, transform.position.z + 0.3f), projecttilePrefab.transform.rotation);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(resetMovement), rotateSpeed);
             animator.SetBool("isAttacking", true);
         }
