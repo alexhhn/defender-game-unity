@@ -12,6 +12,8 @@ public class ProjectileController : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         var rot = transform.rotation;
         rot.x = 0;
+        transform.localScale = new Vector3(gameManager.projectileSize, gameManager.projectileSize, gameManager.projectileSize);
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -20,7 +22,7 @@ public class ProjectileController : MonoBehaviour
         if (collision.GetComponent<Collider>().tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            // Destroy(gameObject);
             // Debug.Log(gameManager);
             gameManager.UpdateScore(1);
 
@@ -33,5 +35,6 @@ public class ProjectileController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);
+
     }
 }

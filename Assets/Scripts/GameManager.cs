@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     private float currentTime = 0;
     private float timeIncreaseRate = 5f;
 
+    private float defaultProjectTileSize = 0.3f;
+    public float projectileSize;
+
     // public float restartDelay = 0.1f;
 
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         scoreText.text = score + " Mæber";
+        projectileSize = defaultProjectTileSize;
     }
 
     // Update is called once per frame
@@ -46,5 +50,26 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over!");
             // SceneManager.LoadScene("GameOver");
         }
+    }
+
+    public void TriggerScalePowerUp()
+    {
+        // * Scale the projectile up in a period, then reset it
+        StartCoroutine(ScaleProjectile(5f, 2));
+
+    }
+
+    IEnumerator ScaleProjectile(float scaleSize, float duration)
+    {
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        projectileSize = scaleSize;
+
+        yield return new WaitForSeconds(duration);
+        projectileSize = defaultProjectTileSize;
+
+        // gameManager.projectileSize = 1f;
+
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+
     }
 }

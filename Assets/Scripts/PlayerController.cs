@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public float movementSpeed = 10.0f;
     public float rotateSpeed = 0.15f;
-
     public float horizontalInput;
     public float verticalInput;
     public Animator animator;
@@ -95,12 +94,18 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
     }
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnCollisionEnter(Collision collision)
     {
-        if (collisionInfo.collider.tag == "Enemy")
+        Debug.Log("on collision enter");
+        if (collision.collider.tag == "Enemy")
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+        // else if (collision.collider.tag == "Powerup")
+        // {
+        //     Destroy(collision.gameObject);
+
+        // }
     }
 
     // This function is also called on UI
